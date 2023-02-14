@@ -1,6 +1,6 @@
 img = "";
 function preload(){
-    img = loadImage("../img/dog_cat.jpg");
+    img = loadImage("img/dog_cat.jpg");
 }
 function setup(){
     canvas = createCanvas(640,420);
