@@ -1,5 +1,6 @@
 img = "";
 status = "";
+objects = [];
 function preload(){
     img = loadImage("img/dog_cat.jpg");
 }
@@ -10,17 +11,19 @@ function setup(){
     document.getElementById("status").innerHTML = "Status : Detecting Objects"
 }
 function draw(){
-    image(img,0,0,640,420);
-    fill("#ff0000")
-    text("dog",45,75)
-    noFill();
-    stroke("#ff0000");
-    rect(30,60,450,350);
-    fill("#ff0000");
-    text("cat",310,105);
-    noFill();
-    stroke("#ff0000");
-    rect(300,90,270,310);
+image(img,0,0,640,420);
+if(status != ""){
+    for (i = 0; i < objects.length; i++) {
+        percent = floor(objects[i].confidence * 100);
+        document.getElementById("status").innerHTML = "Status : Object(s) Detected"
+        fill("#FF0000");
+        text(objects[i].label+" "+percent+"%",objects[i].x,objects[i].y);
+        noFill();
+        stroke("#FF0000");
+        rect(objects[i].x-10,objects[i].y-20,objects[i].width,objects[i].height);
+        
+    }
+}
 }
 function modelloaded(){
     console.log("cocossd loaded");
@@ -29,9 +32,10 @@ function modelloaded(){
 }
 function gotResults(error,results){
     if(error){
-        console.error(error)
+        console.error(error);
     }
     else{
-        console.log(results)
+        console.log(results);
+        objects = results;
     }
 }
