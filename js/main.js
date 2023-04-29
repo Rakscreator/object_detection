@@ -9,6 +9,8 @@ function setup(){
     video = createCapture(VIDEO);
     video.size(640,470);
     video.hide();
+
+    document.getElementById("no_of_objects").style = "display: none";
 }
 function draw(){
     image(video,0,0,640,470);
@@ -19,7 +21,8 @@ function draw(){
         objectDetector.detect(video,gotResults);
         for (i = 0; i < objects.length; i++) {
             percent = floor(objects[i].confidence * 100);
-            document.getElementById("status").innerHTML = "Status : Object(s) Detected"
+            document.getElementById("status").innerHTML = "Status : Object(s) Detected";
+            document.getElementById("no_of_objects").style = "display: inline";
             document.getElementById("no_of_objects").innerHTML = "No. of object(s) Dectected : " + objects.length;
             fill(r,g,b);
             text(objects[i].label+" "+percent+"%",objects[i].x,objects[i].y);
