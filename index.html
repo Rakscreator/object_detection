@@ -1,7 +1,6 @@
 <html>
 <head>
-
-	<title>Object Detection</title>
+  <title>AI BABY MONITORING WEB APP</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -10,22 +9,23 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
 
   <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
   
-  <link rel="stylesheet" type="text/css" href="Css/style.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body background="img/background.jpg">
+<body background="https://th.bing.com/th/id/OIP.lQqXmpL7ifb7Iwm7RbBmygHaHa?pid=ImgDet&rs=1">
   <center>
-    <h1 class="btn btn-info heading">Object Detection</h1>
-    <h3 class="btn btn-danger" id="status">Status : __</h3>
-    <br>
-    <h3 class="btn btn-warning" id="no_of_objects" >Object(s) Detected : __</h3>
+    <h1 class="btn btn-success heading">AI BABY MONITORING WEB APP</h1>
+    <h2 class="btn btn-warning">If a person is not detected alarm will be played</h2>
     <br><br>
-    <button class="btn btn-info" onclick="start()">START</button>
+    <h3 class="btn btn-danger" id="status"></h3>
+    <h3 class="btn btn-warning" id="Number_of_objects"></h3>
 
   </center>
 
-  <script src="js/main.js"></script>
+  <script src="main.js"></script>
 
 </body>
 </html>
